@@ -234,6 +234,90 @@ footer .social img {
     padding-top: 15px;
 }
 
+/* PAGE 2 - ABOUT US */
+
+.about-title {
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    font-family: 'Architects Daughter', cursive;
+    margin-top: 10px;
+}
+
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: -100px;
+    justify-items: center;
+}
+
+#about-msg {
+    justify-items: center;
+    grid-column: 2/7;
+    grid-row: 1/2;
+    margin-top: 125px;
+    z-index: -1;
+    width: 100%;
+}
+
+#about section {
+    background-color: #E7C24F;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: .75em;
+    padding: 5% 10%;
+    margin: 10% 10%;
+    border-radius: 5%;
+    /* these sections are still just ever so slightly off-center from the images, how can I fix that? I'm having a hard time knowing how to use justify correctly (many times I try all 3 versions and none work) */
+}
+
+#about .img {
+    border: 10px solid #617543;
+    margin: 1%;
+    transition: transform .5s;
+    height: 70%;
+    max-width: 1fr;
+    max-height: 133px;
+    object-fit: cover;
+}
+
+#about .img:hover {
+    opacity: .6;
+    transform: scale(1.1);
+}
+
+#about #about-img {
+    margin-top: 100px;
+    max-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    grid-column: 1/8;
+    grid-row: 1/6;
+    object-fit: cover;
+}
+
+#locations {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#events {
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+
+#ourhistory {
+    grid-column: 6/7;
+    grid-row: 2/3;
+}
+
+.about-grid {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
 @media screen and (max-width: 900px) {
 
     #hero,

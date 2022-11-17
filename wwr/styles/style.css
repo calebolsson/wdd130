@@ -277,7 +277,6 @@ footer .social img {
     margin: 1%;
     transition: transform .5s;
     height: 70%;
-    max-width: 1fr;
     max-height: 133px;
     object-fit: cover;
 }

@@ -251,3 +251,14 @@ footer p a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+/* ENCYCLOPEDIA */
+
+.dict-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.dict-grid h1 {
+    grid-column: 1/5;
+}

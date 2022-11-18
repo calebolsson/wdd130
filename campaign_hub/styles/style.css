@@ -225,11 +225,13 @@ footer p a:hover {
 }
 
 #c4 {
+    /* adventures */
     grid-row: 2;
     grid-column: 1/4;
 }
 
 #c5 {
+    /* resurgence */
     grid-row: 2;
     grid-column: 4/7;
 }

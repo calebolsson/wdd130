@@ -230,6 +230,11 @@ footer p a:hover {
     grid-column: 1/4;
 }
 
+#c4 img {
+    /* edit to focus on image better */
+    object-position: top;
+}
+
 #c5 {
     /* resurgence */
     grid-row: 2;
@@ -263,4 +268,70 @@ footer p a:hover {
 
 .dict-grid h1 {
     grid-column: 1/5;
+}
+
+/* MOBILE VERSION */
+
+.icon-bar {
+    opacity: 0;
+    z-index: -1;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .icon-bar {
+        opacity: 1;
+        z-index: 1;
+        width: 100%;
+        /* Full-width */
+        background-color: #000;
+        /* Black background */
+        overflow: auto;
+        /* Overflow due to float */
+    }
+
+    .icon-bar a {
+        float: left;
+        /* Float links side by side */
+        text-align: center;
+        /* Center-align text */
+        width: 25%;
+        /* Equal width (4 icons with 25% width each = 100%) */
+        padding: 12px 0;
+        /* Some top and bottom padding */
+        transition: all 0.3s ease;
+        /* Add transition for hover effects */
+        color: #BE95C4;
+        /* White text color */
+        font-size: 36px;
+        /* Increased font size */
+    }
+
+    .icon-bar a:hover {
+        background-color: #5E548E;
+        /* Add a hover color */
+        color: #000
+            /* Add a hover text color */
+    }
+
+    .active {
+        background-color: #231942;
+        /* Add an active/current color */
+    }
+
+    /* Adjust displays for mobile */
+    .home-grid, .time-grid, .dict-grid {
+        padding: 0% 10%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #content {
+        margin: 0;
+    }
+
 }

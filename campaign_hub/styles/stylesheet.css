@@ -44,6 +44,7 @@ body {
 img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 h1,
@@ -176,13 +177,13 @@ nav a:hover {
     line-height: 3em;
 }
 
-.sm-page2 {
+.sm-timeline {
     grid-area: page2;
     background-color: #ccc;
     line-height: 3em;
 }
 
-.sm-page3 {
+.sm-encyclopedia {
     grid-area: page3;
     background-color: #ccc;
     line-height: 3em;

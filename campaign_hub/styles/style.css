@@ -138,7 +138,8 @@ p {
     text-decoration: none;
 }
 
-.home-grid h2, p {
+.home-grid h2,
+p {
     grid-column: 4/7;
 }
 
@@ -154,29 +155,59 @@ p {
 
 /* CAMPAIGN TEMPLATE PAGE */
 
-#campaign-page-navbar-title {
-    /* border: 1px solid white; */
-    margin-top: -145px;
+.wiki-title {
+    border: 1px solid black;
+    /*border for debug purposes*/
+    padding-top: 60px;
+    margin: 0px;
     margin-left: 175px;
+    padding-left: 50px;
     text-align: left;
+    grid-column: 1/-3;
+}
+
+#campaign-page-navbar-title {
+    margin-top: -200px;
+    /* margin-bottom: 70px; */
 }
 
 #side-menu {
-    grid-area: 1/-1/span 3/-3;
+    grid-area: 1/-1/span 99/-3;
     border: 1px solid #5E548E;
     width: 80%;
     padding: 0% 5%;
-    /* margin-top: -100px; */
     height: fit-content;
     justify-self: center;
 }
 
 #side-menu img {
-    /* object-fit: cover; */
+    object-fit: cover;
     max-width: 100%;
 }
 
+#side-menu a {
+    text-decoration: none;
+}
 
+#sessions {
+    text-align: center;
+}
+
+#sessions p {
+    display: inline;
+}
+
+.wiki-block {
+    border: 1px solid black;
+    /*border for debug purposes*/
+    margin-left: 10px;
+    padding: 0% 5%;
+    grid-column: 2/-3;
+}
+
+.wiki-block h2 {
+    text-align: left;
+}
 
 /* FOOTER AND SOCIAL */
 

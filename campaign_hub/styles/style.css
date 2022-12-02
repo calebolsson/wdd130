@@ -32,7 +32,7 @@ nav:hover {
 nav a {
     color: #5E548E;
     text-decoration: none;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     font-family: Quantico, Helvetica, sans-serif;
     transition: all 0.5s ease-out;
     margin: 0px 50px;
@@ -63,8 +63,10 @@ a:focus {
 }
 
 .logo {
-    width: 120px;
-    height: 131px;
+    /* width: 120px; */
+    width: 100%;
+    height: 100%;
+    /* height: 131px; */
     justify-self: center;
     align-self: center;
 }
@@ -108,7 +110,7 @@ body {
 h1 {
     color: #5E548E;
     font-family: "Cormorant Infant";
-    font-size: 3vw;
+    font-size: 3em;
     text-align: center;
     text-decoration: none;
 }
@@ -116,7 +118,7 @@ h1 {
 h2 {
     color: #5E548E;
     font-family: "Cormorant Infant";
-    font-size: 2vw;
+    font-size: 2em;
     text-align: center;
     text-decoration: none;
 }
@@ -124,7 +126,7 @@ h2 {
 h3 {
     color: #5E548E;
     font-family: "Cormorant Infant";
-    font-size: 1.5vw;
+    font-size: 1.5em;
     text-align: center;
     text-decoration: none;
 }
@@ -132,7 +134,7 @@ h3 {
 p {
     color: #5E548E;
     font-family: Quantico, Helvetica, sans-serif;
-    font-size: 1vw;
+    /* font-size: 1vw; */
     text-decoration: none;
 }
 
@@ -150,12 +152,21 @@ p {
     max-width: 50%;
 }
 
+/* CAMPAIGN TEMPLATE PAGE */
+
+#campaign-page-navbar-title {
+    /* border: 1px solid white; */
+    margin-top: -145px;
+    margin-left: 175px;
+    text-align: left;
+}
+
 #side-menu {
     grid-area: 1/-1/span 3/-3;
     border: 1px solid #5E548E;
     width: 80%;
     padding: 0% 5%;
-    margin-top: -100px;
+    /* margin-top: -100px; */
     height: fit-content;
     justify-self: center;
 }
@@ -164,6 +175,8 @@ p {
     /* object-fit: cover; */
     max-width: 100%;
 }
+
+
 
 /* FOOTER AND SOCIAL */
 

@@ -209,6 +209,15 @@ p {
     text-align: left;
 }
 
+.banner {
+    text-align: center;
+    grid-column: 3/-4;
+}
+
+.banner p {
+    color: red;
+}
+
 /* FOOTER AND SOCIAL */
 
 footer {

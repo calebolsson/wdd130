@@ -467,9 +467,9 @@ footer p a:hover {
         z-index: -99;
     }
 
-    /*align #side-menu on mobile (attempt 1)*/
+    /*align #side-menu on mobile (attempt ...)*/
     #side-menu {
-        grid-area: 0/1/0/1;
+        
     }
 
 }

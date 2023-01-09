@@ -92,6 +92,40 @@ a:focus {
     transform: scale(1.1);
 }
 
+#totop {
+    display: none;
+    /* Hidden by default */
+    grid-row: 2;
+    width: 48px;
+    height: 48px;
+    justify-self: center;
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: black;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    margin: 15px;
+    /* Some padding */
+    border-radius: 50%;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+    opacity: 0.5;
+}
+
+#totop:hover {
+    background-color: #231942;
+    /* Add a purple background on hover */
+}
+
 /* MAIN CONTENT */
 
 body {
@@ -221,37 +255,7 @@ p {
     color: red;
 }
 
-#totop {
-    display: none;
-    /* Hidden by default */
-    grid-row: 2;
-    width: 48px;
-    height: 48px;
-    justify-self: center;
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: black;
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 15px;
-    /* Some padding */
-    border-radius: 50%;
-    /* Rounded corners */
-    font-size: 18px;
-    /* Increase font size */
-}
 
-#totop:hover {
-    background-color: #111;
-    /* Add a dark-grey background on hover */
-}
 
 /* FOOTER AND SOCIAL */
 
@@ -373,8 +377,29 @@ footer p a:hover {
 
 .time-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
+.time-grid .entry {
+    margin: 2.5%;
+    padding: 5%;
+    background-color: #111E;
+    border-radius: 20%;
+    border: 5px solid #111;
+}
+
+/* The animation code */
+@keyframes time-glint {
+    0%   {border-color: #BE95C4;}
+    25% {border-color: #9F86C0;}
+    50%  {border-color: #5E548E;}
+    100%  {border-color: #231942;}
+  }
+  
+  /* The element to apply the animation to */
+  .time-grid .entry:hover {
+    animation: time-glint 0.8s infinite 0s alternate ease-out;
+  }
 
 /* ENCYCLOPEDIA */
 

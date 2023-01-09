@@ -385,7 +385,7 @@ footer p a:hover {
 }
 
 .time-grid .entry {
-    padding: 2%;
+    padding: 1%;
     background-color: #111E;
     border-radius: 20%;
     border: 5px solid #111;
@@ -482,7 +482,7 @@ footer p a:hover {
     }
 
     .time-grid .entry {
-        flex-basis: 30%;
+        flex-basis: 70%;
     }
 
     #content {

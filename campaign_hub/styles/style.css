@@ -385,8 +385,7 @@ footer p a:hover {
 }
 
 .time-grid .entry {
-    /* margin: 2.5%; */
-    padding: 1%;
+    padding: 2%;
     background-color: #111E;
     border-radius: 20%;
     border: 5px solid #111;
@@ -472,11 +471,18 @@ footer p a:hover {
 
     /* Adjust displays for mobile */
     .home-grid,
-    .time-grid,
     .dict-grid {
         padding: 0% 10%;
         display: grid;
         grid-template-columns: 1fr;
+    }
+
+    .time-grid {
+        margin-top: 50px;
+    }
+
+    .time-grid .entry {
+        flex-basis: 30%;
     }
 
     #content {

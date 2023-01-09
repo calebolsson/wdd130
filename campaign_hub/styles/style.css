@@ -461,4 +461,15 @@ footer p a:hover {
     .camp-tile p {
         font-size: 2.5vw;
     }
+
+    .wiki-title {
+        opacity: 0;
+        z-index: -99;
+    }
+
+    /*align #side-menu on mobile (attempt 1)*/
+    #side-menu {
+        grid-area: 0/1/0/1;
+    }
+
 }

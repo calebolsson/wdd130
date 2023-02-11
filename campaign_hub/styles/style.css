@@ -92,10 +92,11 @@ a:focus {
     transform: scale(1.1);
 }
 
-#totop {
+#totop,
+#openSorter {
     display: none;
     /* Hidden by default */
-    grid-row: 2;
+    grid-column: 1;
     width: 48px;
     height: 48px;
     justify-self: center;
@@ -121,9 +122,30 @@ a:focus {
     opacity: 0.5;
 }
 
-#totop:hover {
+#openSorter {
+    display: block;
+}
+
+#totop:hover,
+#openSorter:hover {
     background-color: #231942;
     /* Add a purple background on hover */
+}
+
+#sorterMenu {
+    background-color: #111;
+    border-color: #231942;
+    width: fit-content;
+    display: none;
+    grid-template-columns: 1fr;
+}
+
+#basicSort {
+    text-align: center;
+}
+
+#selectValues {
+    display: none;
 }
 
 /* MAIN CONTENT */
@@ -166,6 +188,15 @@ h3 {
     font-size: 1.5em;
     text-align: center;
     text-decoration: none;
+}
+
+legend {
+    color: #5E548E;
+    font-family: "Cormorant Infant";
+    font-size: 2em;
+    text-decoration: none;
+    background-color: #111;
+    border: 1px solid #231942;
 }
 
 p {
@@ -394,26 +425,122 @@ footer p a:hover {
 
 /* The animation code */
 @keyframes time-glint {
-    0%   {border-color: #BE95C4;}
-    25% {border-color: #9F86C0;}
-    50%  {border-color: #5E548E;}
-    100%  {border-color: #231942;}
-  }
-  
-  /* The element to apply the animation to */
-  .time-grid .entry:hover {
+    0% {
+        border-color: #BE95C4;
+    }
+
+    25% {
+        border-color: #9F86C0;
+    }
+
+    50% {
+        border-color: #5E548E;
+    }
+
+    100% {
+        border-color: #231942;
+    }
+}
+
+/* The element to apply the animation to */
+.time-grid .entry:hover {
     animation: time-glint 0.8s infinite 0s alternate ease-out;
-  }
+}
 
 /* ENCYCLOPEDIA */
 
-.dict-grid {
+#loadingProgress {
+    margin: 0 40%;
+    width: 20%;
+    background-color: #111;
+}
+
+#loadingBar {
+    width: 1%;
+    height: 30px;
+    background-color: #231942;
+}
+
+#dict-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.dict-grid h1 {
+#dict-grid h1 {
     grid-column: 1/5;
+}
+
+.entry {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.entry h2 {
+    width: 100%;
+}
+
+.entry div[data="blue"] {
+    background-color: cyan;
+}
+
+.entry div[data="red"] {
+    background-color: red;
+}
+
+.entry div[data="brown"] {
+    background-color: chocolate;
+}
+
+.entry div[data="yellow"] {
+    background-color: yellow;
+}
+
+.entry div[data="blue-gray"] {
+    background-color: grey;
+}
+
+.entry div[data="black"] {
+    background-color: #111;
+}
+
+.entry div[data="hazel"] {
+    background-color: #8E7618;
+}
+
+.entry div[data="orange"] {
+    background-color: orange;
+}
+
+.entry div[data="pink"] {
+    background-color: pink;
+}
+
+.entry div[data="gold"] {
+    background-color: #FFD700;
+}
+
+.entry div[data="white"] {
+    background-color: white;
+}
+
+
+.tag {
+    width: fit-content;
+    text-align: center;
+    /* border: solid 1px #BE95C4; */
+    background-color: #5E548E;
+    border-radius: 10%;
+    margin: -10px 10px;
+    padding: 2%;
+}
+
+.tag p {
+    /* background-color: #231942; */
+    width: fit-content;
+    color: black;
+    margin: 0;
 }
 
 /* MOBILE VERSION */

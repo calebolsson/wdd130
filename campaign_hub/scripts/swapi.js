@@ -100,23 +100,28 @@ function createHeader(insertTitle) {
   grid.appendChild(headElement);
 }
 
-// calls createEntryElement x3 for each entry to construct full database
+// repeatedly calls createEntryElement for each entry
 let grid = document.getElementById("dict-grid");
+let headerArray = [];
 function outputData(outputArray) {
   let lastEntry = null;
+  headerArray = [];
   outputArray.forEach((entry) => {
     if (sortBy == "charname") {
       if (lastEntry == null || lastEntry.name[0] != entry.name[0]) {
         createHeader(entry.name.charAt(0));
+        headerArray.push(entry.name.charAt(0));
       }
     } else if (sortBy == "eyecolor") {
       if (lastEntry == null || lastEntry.eye_color != entry.eye_color) {
         createHeader(entry.eye_color);
+        headerArray.push(entry.eye_color);
       }
     }
     let newEntry = createEntryElement(grid, "div", "entry", entry.name);
     createEntryElement(newEntry, "div", "tag", entry.birth_year);
     createEntryElement(newEntry, "div", "tag", entry.eye_color);
+    // createEntryElement(newEntry, "div", "tag", entry.homeworld);
     console.log("Output: " + entry.name);
     lastEntry = entry;
   });
@@ -129,8 +134,8 @@ let sortBy = "charname";
 let sortOrder = "asc";
 function sortCharacters() {
   reset();
-  sortBy = document.getElementById("sortBy").value;
-  sortOrder = document.getElementById("order").value;
+  sortBy = sortSelected.value;
+  sortOrder = orderSelected.value;
   characters.sort(sortFunction);
   outputData(characters);
 }

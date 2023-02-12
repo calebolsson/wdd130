@@ -136,16 +136,24 @@ a:focus {
     background-color: #111;
     border-color: #231942;
     width: fit-content;
+    max-height: 30vw;
+    max-width: 20vw;
     display: none;
-    grid-template-columns: 1fr;
-}
-
-#basicSort {
+    flex-flow: column;
     text-align: center;
 }
 
 #selectValues {
     display: none;
+    flex-flow: row wrap;
+    overflow: auto;
+}
+
+#selectValues p {
+    margin: 0 0;
+    width: fit-content;
+    min-width: 50%;
+    text-align: left;
 }
 
 /* MAIN CONTENT */

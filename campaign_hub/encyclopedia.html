@@ -24,7 +24,7 @@
         <button id="openSorter" title="Sort characters" class="fa fa-filter"></button>
         <fieldset id="sorterMenu">
             <legend>Encyclopedia Sorting Tool</legend>
-            <section id="basicSort">
+            <!-- <section id="basicSort"> -->
                 <p>
                     Sort by:
                     <select id="sortBy">
@@ -41,17 +41,12 @@
                         <option value="values">Certain Values</option>
                     </select>
                 </p>
-                <p id="selectValues">
-                    Select values:
-                    <br>
-                    <input type="checkbox" name="" value=""> Option
-                    <input type="checkbox" name="" value=""> Option
-                    <input type="checkbox" name="" value=""> Option
-                </p>
+                <div id="selectValues">
+                </div>
                 <p>
                     <button id="sortController">Sort</button>
                 </p>
-            </section>
+            <!-- </section> -->
         </fieldset>
         <button onclick="topFunction()" id="totop" title="Go to top" class="fa fa-arrow-up"></button>
     </header>
@@ -67,8 +62,6 @@
             <div id="loadingBar"></div>
         </div>
         <main id="dict-grid">
-
-
         </main>
     </div>
     <footer>

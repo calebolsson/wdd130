@@ -25,27 +25,28 @@
         <fieldset id="sorterMenu">
             <legend>Encyclopedia Sorting Tool</legend>
             <!-- <section id="basicSort"> -->
-                <p>
-                    Sort by:
-                    <select id="sortBy">
-                        <option value="charname">Character Name</option>
-                        <option value="eyecolor">Eye Color</option>
-                        <option value="birthyear">Birth Year</option>
-                    </select>
-                </p>
-                <p>
-                    Order:
-                    <select id="order">
-                        <option value="asc">Ascending</option>
-                        <option value="desc">Descending</option>
-                        <option value="values">Certain Values</option>
-                    </select>
-                </p>
-                <div id="selectValues">
-                </div>
-                <p>
-                    <button id="sortController">Sort</button>
-                </p>
+            <p>
+                Sort by:
+                <select id="sortBy">
+                    <option value="charname">Character Name</option>
+                    <option value="homeworld">Homeworld</option>
+                    <option value="eyecolor">Eye Color</option>
+                    <option value="birthyear">Birth Year</option>
+                </select>
+            </p>
+            <p>
+                Order:
+                <select id="order">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                    <option value="values">Certain Values</option>
+                </select>
+            </p>
+            <form id="selectValues" action="/scripts/filter.php">
+            </form>
+            <p>
+                <button id="sortController">Sort</button>
+            </p>
             <!-- </section> -->
         </fieldset>
         <button onclick="topFunction()" id="totop" title="Go to top" class="fa fa-arrow-up"></button>

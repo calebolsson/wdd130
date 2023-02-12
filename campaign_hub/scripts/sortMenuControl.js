@@ -41,7 +41,7 @@ function expandedSwitch() {
         let newcheckbox = document.createElement("input");
         let newLabel = document.createElement("label");
         newcheckbox.type = "checkbox";
-        newcheckbox.name = c.name;
+        newcheckbox.name = "charnameFilter";
         newcheckbox.value = c.name;
         newcheckbox.id = "c" + c.name;
         newLabel.for = "c" + c.name;
@@ -54,13 +54,13 @@ function expandedSwitch() {
     case "eyecolor":
       let usedColors = [];
       characters.forEach((c) => {
-        if (usedColors.findIndex((i) => i == c.eye_color) == -1) {
+        if (!usedColors.includes(c.eye_color)) {
           usedColors.push(c.eye_color);
           let newP = document.createElement("p");
           let newcheckbox = document.createElement("input");
           let newLabel = document.createElement("label");
           newcheckbox.type = "checkbox";
-          newcheckbox.name = c.eye_color;
+          newcheckbox.name = "eyecolorFilter";
           newcheckbox.value = c.eye_color;
           newcheckbox.id = "c" + c.eye_color;
           newLabel.for = "c" + c.eye_color;
@@ -78,7 +78,22 @@ function expandedSwitch() {
         let newcheckbox = document.createElement("input");
         let newLabel = document.createElement("label");
         newcheckbox.type = "checkbox";
-        newcheckbox.name = c;
+        newcheckbox.name = "birthyearFilter";
+        newcheckbox.value = c;
+        newcheckbox.id = "c" + c;
+        newLabel.for = "c" + c;
+        newLabel.textContent = c;
+        newP.appendChild(newcheckbox);
+        newP.appendChild(newLabel);
+        valueMenu.appendChild(newP);
+      });
+    case "homeworld":
+      homeworlds.forEach((c) => {
+        let newP = document.createElement("p");
+        let newcheckbox = document.createElement("input");
+        let newLabel = document.createElement("label");
+        newcheckbox.type = "checkbox";
+        newcheckbox.name = "birthyearFilter";
         newcheckbox.value = c;
         newcheckbox.id = "c" + c;
         newLabel.for = "c" + c;

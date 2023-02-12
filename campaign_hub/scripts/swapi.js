@@ -50,46 +50,53 @@ async function getData() {
 }
 
 // tests to see if text is api call
-function fetchTest(test) {
+function fetchTest(test, clas, el) {
   if (test.startsWith("https://swapi")) {
-    return fetchValue(test);
+    return fetchValue(test, clas, el);
   } else {
     return test;
   }
 }
 
 // grabs a snippet of data from SWAPI
-async function fetchValue(fetchUrl) {
-  let result = await fetch(fetchUrl);
-  if (result.ok) {
-    let toReturn = await result.json();
-    console.log("Success: fetchValue() returned " + toReturn);
-    return toReturn;
-  } else {
-    console.log("Error: fetchValue() failed a fetch");
-    return fetchUrl;
-  }
+async function fetchValue(fetchUrl, el) {
+  fetch(fetchUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success: fetchValue() returned " + data.name);
+      if (
+        fetchUrl.startsWith("https://swapi.dev/api/planets/") &&
+        !homeworlds.includes(data.name)
+      ) {
+        homeworlds.push(data.name);
+      }
+      el.textContent = data.name;
+    });
+  // .catch((error) => {
+  //   console.error("fetchValue() failed a fetch:", error);
+  //   return fetchUrl;
+  // });
 }
 
 // creates a new element, used x3 to create a full entry
 function createEntryElement(parent, element, clas, text) {
-  let newElement = document.createElement(element);
-  newElement.setAttribute("class", fetchTest(clas));
-  newElement.setAttribute("data", fetchTest(text));
+  let newEl = document.createElement(element);
+  newEl.setAttribute("class", clas);
+  newEl.setAttribute("data", text);
   let entryname;
   switch (clas) {
     case "entry":
-      entryname = newElement.appendChild(document.createElement("h2"));
+      entryname = newEl.appendChild(document.createElement("h2"));
       break;
     case "tag":
-      entryname = newElement.appendChild(document.createElement("p"));
+      entryname = newEl.appendChild(document.createElement("p"));
       break;
     default:
       console.log("Error: createEntryElement switch was not tripped");
   }
-  entryname.textContent = fetchTest(text);
-  parent.appendChild(newElement);
-  return newElement;
+  entryname.textContent = fetchTest(text, entryname);
+  parent.appendChild(newEl);
+  return newEl;
 }
 
 // creates a header that will separate groups of entries
@@ -103,6 +110,7 @@ function createHeader(insertTitle) {
 // repeatedly calls createEntryElement for each entry
 let grid = document.getElementById("dict-grid");
 let headerArray = [];
+let homeworlds = [];
 function outputData(outputArray) {
   let lastEntry = null;
   headerArray = [];
@@ -121,7 +129,7 @@ function outputData(outputArray) {
     let newEntry = createEntryElement(grid, "div", "entry", entry.name);
     createEntryElement(newEntry, "div", "tag", entry.birth_year);
     createEntryElement(newEntry, "div", "tag", entry.eye_color);
-    // createEntryElement(newEntry, "div", "tag", entry.homeworld);
+    createEntryElement(newEntry, "div", "tag", entry.homeworld);
     console.log("Output: " + entry.name);
     lastEntry = entry;
   });

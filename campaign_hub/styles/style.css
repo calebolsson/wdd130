@@ -40,26 +40,31 @@ nav a {
     transition: all 0.5s ease-out;
     margin: 0px 50px;
     padding: 25px;
+    border-radius: 20px;
 }
 
 nav a:hover,
-a:focus {
+nav a:focus {
     color: #BE95C4;
+    text-shadow: black 1px 1px 5px;
 }
 
-#campaigns:hover {
+#campaigns:hover,
+#campaigns:focus {
     background: url("../images/MOoT-cover.jpg");
     background-size: cover;
     background-position: center;
 }
 
-#timeline:hover {
+#timeline:hover,
+#timeline:focus {
     background: url("../images/stars-banner.jpg");
     background-size: cover;
     background-position: center;
 }
 
-#encyclopedia:hover {
+#encyclopedia:hover,
+#encyclopedia:focus {
     background: url("../images/manual.jpg");
     background-size: cover;
     background-position: center;
@@ -337,6 +342,7 @@ footer p a:hover {
 
 .camp-tile {
     background-color: #111;
+    border-radius: 50px;
     text-align: center;
     grid-column: span 3;
     min-height: fit-content;
@@ -345,10 +351,15 @@ footer p a:hover {
     text-decoration: none;
     transition: all 0.5s ease-out;
     opacity: 0.85;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .camp-tile h2 {
     font-size: 2vw;
+    margin-bottom: 0;
 }
 
 .camp-tile p {
@@ -358,6 +369,7 @@ footer p a:hover {
 .camp-tile img {
     object-fit: cover;
     object-position: center;
+    border-radius: 50px;
     width: 85%;
     height: 70%;
 }
